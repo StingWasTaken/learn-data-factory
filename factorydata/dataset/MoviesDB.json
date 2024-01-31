@@ -9,7 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "moviesDB2.csv",
+				"folderPath": "input",
+				"container": "datafactory"
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
@@ -19,7 +22,7 @@
 		},
 		"schema": [
 			{
-				"name": "movies",
+				"name": "Movies",
 				"type": "String"
 			},
 			{
@@ -27,11 +30,11 @@
 				"type": "String"
 			},
 			{
-				"name": "genresgenregenre",
+				"name": "Genres",
 				"type": "String"
 			},
 			{
-				"name": "YEAR",
+				"name": "Year",
 				"type": "String"
 			},
 			{

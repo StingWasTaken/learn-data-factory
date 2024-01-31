@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "DestinationMovies",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -15,13 +15,14 @@
 				"container": "datafactory"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "movies",
+				"name": "MoviesButCool",
 				"type": "String"
 			},
 			{
@@ -29,11 +30,11 @@
 				"type": "String"
 			},
 			{
-				"name": "genresgenregenre",
+				"name": "Genres",
 				"type": "String"
 			},
 			{
-				"name": "YEAR",
+				"name": "Year",
 				"type": "String"
 			},
 			{

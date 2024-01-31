@@ -15,10 +15,10 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "DestinationMovies",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "ExportMovies"
 				}
 			],
 			"transformations": [
@@ -28,27 +28,27 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          movies as string,",
+				"          Movies as string,",
 				"          Title as string,",
-				"          genresgenregenre as string,",
-				"          YEAR as string,",
+				"          Genres as string,",
+				"          Year as string,",
 				"          Rating as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> MoviesDB",
-				"MoviesDB filter(toInteger(YEAR) >= 1010 && toInteger(YEAR) <= 2000 && rlike(genresgenregenre, 'Comedy')) ~> FilterYears",
+				"MoviesDB filter(toInteger(Year) >= 1010 && toInteger(Year) <= 2000 && rlike(Genres, 'Comedy')) ~> FilterYears",
 				"FilterYears sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
-				"          movies as string,",
+				"          MoviesButCool as string,",
 				"          Title as string,",
-				"          genresgenregenre as string,",
-				"          YEAR as string,",
+				"          Genres as string,",
+				"          Year as string,",
 				"          Rating as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> ExportMovies"
 			]
 		}
 	}
